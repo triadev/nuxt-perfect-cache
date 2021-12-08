@@ -11,7 +11,7 @@ export default function index({
                               }) {
   const { nuxt } = this
 
-  nuxt.hook('render:before', (renderer) => {
+  nuxt.hook('render:setupMiddleware', (renderer) => {
     const renderRoute = renderer.renderRoute.bind(renderer)
     renderer.renderRoute = function (route, context) {
       const host = context.req.headers.host
